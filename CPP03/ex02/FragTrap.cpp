@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnassi <mnassi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/21 16:21:37 by mnassi            #+#    #+#             */
-/*   Updated: 2023/08/23 22:12:35 by mnassi           ###   ########.fr       */
+/*   Created: 2024/11/25 20:10:06 by mualkhid          #+#    #+#             */
+/*   Updated: 2024/11/25 20:10:08 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "FragTrap.hpp"
 

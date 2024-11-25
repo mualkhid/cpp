@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnassi <mnassi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/26 17:36:00 by mnassi            #+#    #+#             */
-/*   Updated: 2023/09/06 16:26:12 by mnassi           ###   ########.fr       */
+/*   Created: 2024/11/25 20:11:48 by mualkhid          #+#    #+#             */
+/*   Updated: 2024/11/25 20:11:49 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef CAT_HPP
 #define CAT_HPP
@@ -21,7 +22,7 @@ class Cat : public Animal {
 		Cat( st_ type );
 		Cat( const Cat &copy );
 		Cat &operator=(const Cat &b);
-		void	makeSound() const; 
+		void	makeSound() const;
 		~Cat( void );
 };
 

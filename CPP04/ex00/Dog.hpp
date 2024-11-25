@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnassi <mnassi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/26 17:38:43 by mnassi            #+#    #+#             */
-/*   Updated: 2023/09/06 16:25:56 by mnassi           ###   ########.fr       */
+/*   Created: 2024/11/25 20:12:06 by mualkhid          #+#    #+#             */
+/*   Updated: 2024/11/25 20:12:07 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef DOG_HPP
 #define DOG_HPP

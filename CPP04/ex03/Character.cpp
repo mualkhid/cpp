@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnassi <mnassi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/01 13:08:22 by mnassi            #+#    #+#             */
-/*   Updated: 2023/09/11 17:03:23 by mnassi           ###   ########.fr       */
+/*   Created: 2024/11/25 20:26:16 by mualkhid          #+#    #+#             */
+/*   Updated: 2024/11/25 20:26:17 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
 Character::Character( void ) {
-	std::cout << GREEN "Character Constructor Called" RESET << std::endl;	
+	std::cout << GREEN "Character Constructor Called" RESET << std::endl;
 	this->name = "hh";
 	for (int i = 0; i < 4 ; i++)
 		this->slots[i] = NULL;
@@ -49,7 +49,7 @@ st_ const &Character::getName() const {
 }
 
 void Character::equip(AMateria* m) {
-	
+
 	for (int i = 0; i < 4; i++) {
 		if (slots[i] == NULL) {
 			slots[i] = m;
@@ -63,7 +63,7 @@ void Character::unequip(int idx) {
 		slots[idx] = NULL;
 }
 
-void Character::use(int idx, ICharacter& target) {	
+void Character::use(int idx, ICharacter& target) {
 	if (idx >= 0 && idx < 4 && slots[idx])
 		slots[idx]->use(target);
 }

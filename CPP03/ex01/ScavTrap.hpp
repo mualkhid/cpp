@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnassi <mnassi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/21 16:17:32 by mnassi            #+#    #+#             */
-/*   Updated: 2023/08/24 02:10:03 by mnassi           ###   ########.fr       */
+/*   Created: 2024/11/25 20:09:44 by mualkhid          #+#    #+#             */
+/*   Updated: 2024/11/25 20:09:45 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef SCAVTRAP_HPP
 #define SCAVTRAP_HPP

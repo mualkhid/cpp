@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnassi <mnassi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/26 17:38:43 by mnassi            #+#    #+#             */
-/*   Updated: 2023/09/08 14:40:28 by mnassi           ###   ########.fr       */
+/*   Created: 2024/11/25 20:22:54 by mualkhid          #+#    #+#             */
+/*   Updated: 2024/11/25 20:22:55 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ class Dog : public Animal {
 	private :
 		Brain	*idea;
 	public :
-		
-		
+
+
 		Dog( void );
 		Dog( st_ type );
 		Dog( const Dog &copy );

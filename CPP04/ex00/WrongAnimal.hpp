@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnassi <mnassi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/30 13:45:07 by mnassi            #+#    #+#             */
-/*   Updated: 2023/09/08 14:28:38 by mnassi           ###   ########.fr       */
+/*   Created: 2024/11/25 20:21:21 by mualkhid          #+#    #+#             */
+/*   Updated: 2024/11/25 20:21:22 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef WRONGANIMAL_HPP
 #define WRONGANIMAL_HPP

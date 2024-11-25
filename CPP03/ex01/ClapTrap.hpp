@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnassi <mnassi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/21 16:17:32 by mnassi            #+#    #+#             */
-/*   Updated: 2023/08/22 14:32:44 by mnassi           ###   ########.fr       */
+/*   Created: 2024/11/25 20:08:34 by mualkhid          #+#    #+#             */
+/*   Updated: 2024/11/25 20:08:35 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef CLAPTRAP_HPP
 #define CLAPTRAP_HPP

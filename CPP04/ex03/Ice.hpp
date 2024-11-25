@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnassi <mnassi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/01 12:39:21 by mnassi            #+#    #+#             */
-/*   Updated: 2023/09/06 16:11:25 by mnassi           ###   ########.fr       */
+/*   Created: 2024/11/25 20:26:56 by mualkhid          #+#    #+#             */
+/*   Updated: 2024/11/25 20:26:58 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "AMateria.hpp"
 
 class Ice : public AMateria
-{		
+{
 	public :
 		Ice( void );
 		Ice(st_ const & type);

@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnassi <mnassi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/21 18:01:33 by mnassi            #+#    #+#             */
-/*   Updated: 2023/08/27 18:01:08 by mnassi           ###   ########.fr       */
+/*   Created: 2024/11/25 20:10:19 by mualkhid          #+#    #+#             */
+/*   Updated: 2024/11/25 20:10:20 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "FragTrap.hpp"
 
@@ -17,7 +18,7 @@ int main() {
 	ClapTrap jim("Jim");
 	ClapTrap joe("hoe");
 	FragTrap johny;
-	
+
 	john.attack(NULL);
 	john.attack("Bart");
 	john.attack("Homer");

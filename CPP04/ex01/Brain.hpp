@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnassi <mnassi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/30 14:30:06 by mnassi            #+#    #+#             */
-/*   Updated: 2023/09/08 14:38:45 by mnassi           ###   ########.fr       */
+/*   Created: 2024/11/25 20:22:24 by mualkhid          #+#    #+#             */
+/*   Updated: 2024/11/25 20:22:24 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef BRAIN_HPP
 #define BRAIN_HPP

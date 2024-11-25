@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnassi <mnassi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/30 14:30:06 by mnassi            #+#    #+#             */
-/*   Updated: 2023/09/08 16:00:58 by mnassi           ###   ########.fr       */
+/*   Created: 2024/11/25 20:25:01 by mualkhid          #+#    #+#             */
+/*   Updated: 2024/11/25 20:25:03 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Brain {
 			}
 		}
 		void set(std::string str) {
-			
+
 			for (int i = 0; i < 100; i++){
 				 ideas[i] = str;
 			}

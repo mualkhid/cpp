@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnassi <mnassi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/22 12:03:42 by mnassi            #+#    #+#             */
-/*   Updated: 2023/08/26 20:34:57 by mnassi           ###   ########.fr       */
+/*   Created: 2024/11/25 20:10:39 by mualkhid          #+#    #+#             */
+/*   Updated: 2024/11/25 20:10:41 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ DiamondTrap::~DiamondTrap( void ) {
 	std::cout << YELLOW "Destructor Called" RESET << std::endl;
 }
 
-		 
+
 void DiamondTrap::attack( const st_ &target )
 {
 	ScavTrap::attack(target);

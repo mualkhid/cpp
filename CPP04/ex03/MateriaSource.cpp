@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnassi <mnassi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/02 17:38:30 by mnassi            #+#    #+#             */
-/*   Updated: 2023/09/11 17:01:07 by mnassi           ###   ########.fr       */
+/*   Created: 2024/11/25 20:27:17 by mualkhid          #+#    #+#             */
+/*   Updated: 2024/11/25 20:27:19 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &b) {
 	std::cout << RED "Copy assignment operator called" RESET << std::endl;
 	if (this != &b) {
 		for (int i = 0; i < 4; i++)
-		{	
+		{
 			// delete slots[i];
 			// slots[i] = NULL;
 			if (b.slots[i] != NULL)
