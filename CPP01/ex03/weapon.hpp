@@ -6,7 +6,7 @@
 /*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 20:39:09 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/11/20 20:39:10 by mualkhid         ###   ########.fr       */
+/*   Updated: 2024/12/07 20:26:02 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Weapon {
 	private :
 		st_ type;
 	public :
-		Weapon( );
+		Weapon();
 		Weapon( st_ name );
 		const st_& getType();
 		void	setType( st_ setter);

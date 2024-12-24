@@ -6,7 +6,7 @@
 /*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 20:41:48 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/11/20 20:41:49 by mualkhid         ###   ########.fr       */
+/*   Updated: 2024/12/18 19:02:27 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,21 @@
 # define FIXED_CLASS_H
 
 # include <iostream>
+#include <cmath>
+
+#define RESET "\e[0m"
+#define CYAN "\e[36m"
+#define PURPLE "\e[35m"
+#define GREEN "\e[32m"
+#define RED "\e[31m"
+
+#define PRINT_MESSAGE 0
 
 class Fixed
 {
+	private:
+		int					_raw;
+		static const int	_fractionalBits = 8;
 	public:
 		Fixed( void );
 		Fixed( Fixed const & src);
@@ -54,9 +66,7 @@ class Fixed
 		static Fixed const &	min( Fixed const & lhs, Fixed const & rhs );
 		static Fixed const &	max( Fixed const & lhs, Fixed const & rhs );
 
-	private:
-		int					_raw;
-		static const int	_fractionalBits = 8;
+
 };
 
 std::ostream & operator<<( std::ostream & os, const Fixed & number );

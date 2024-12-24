@@ -1,22 +1,22 @@
 NAME = Fixed
 
-CPP = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CXX = c++
 
-SRC = Fixed.cpp main.cpp
-
-OBJ = $(SRC:.cpp=.o)
+SRC = main.cpp Fixed.cpp
 
 HEADER = Fixed.hpp
 
+OBJ=$(SRC:.cpp=.o)
+
 all : $(NAME)
 
-$(NAME) : $(OBJ)
-	$(CPP) $(CFLAGS) $(OBJ) -o $(NAME)
+$(NAME) : $(OBJ) $(HEADER)
+	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
-%.o : %.cpp $(HEADER)
-	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
+%.o : %.cpp
+	$(CXX) $(CXXFLAGS) $(CXXFLAGS) -c $< -o $@
 
 clean :
 	rm -rf $(OBJ)
@@ -27,3 +27,4 @@ fclean : clean
 re : fclean all
 
 .PHONY : clean fclean re
+

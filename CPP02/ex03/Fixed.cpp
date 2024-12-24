@@ -6,24 +6,13 @@
 /*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 20:41:43 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/11/20 20:41:44 by mualkhid         ###   ########.fr       */
+/*   Updated: 2024/12/24 12:21:57 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include <iostream>
-#include <cmath>
 #include "Fixed.hpp"
 
-#define RESET "\e[0m"
-#define CYAN "\e[36m"
-#define YELLOW "\e[33m"
-#define GREEN "\e[32m"
-
-#define PRINT_MESSAGE 0
-/******************************************************************************/
-/*						CONSTRUCTORS & DESTRUCTORS							  */
-/******************************************************************************/
 
 Fixed::Fixed( void ) : _raw( 0 )
 {
@@ -47,7 +36,7 @@ Fixed::Fixed( int const n ) : _raw( n << _fractionalBits )
 	return ;
 }
 
-Fixed::Fixed( float const f ) : _raw( roundf(f * (1 << _fractionalBits)) )
+Fixed::Fixed( float const f ) : _raw( roundf(f * (256)) )
 {
 	if ( PRINT_MESSAGE == 1 )
 		std::cerr << CYAN "Float constructor called." RESET << std::endl;
@@ -61,14 +50,10 @@ Fixed::~Fixed( void )
 	return ;
 }
 
-/******************************************************************************/
-/*								OPERATORS								  	  */
-/******************************************************************************/
-
 Fixed &	Fixed::operator=( Fixed const & src )
 {
 	if ( PRINT_MESSAGE == 1 )
-		std::cerr << YELLOW "Copy assignment operator called." RESET << std::endl;
+		std::cerr << PURPLE "Copy assignment operator called." RESET << std::endl;
 	if ( this != &src )
 		this->_raw = src.getRawBits();
 	return ( *this );
@@ -136,13 +121,13 @@ Fixed	Fixed::operator/( Fixed const & rhs ) const
 	return ( Fixed( this->toFloat() / rhs.toFloat() ) );
 }
 
-Fixed &	Fixed::operator++( void ) // Prefix, i.e. ++fixed
+Fixed &	Fixed::operator++( void )
 {
 	this->_raw += 1;
 	return ( *this );
 }
 
-Fixed Fixed::operator++( int ) // Postfix, i.e. fixed++
+Fixed Fixed::operator++( int )
 {
 	Fixed	tmp( *this );
 
@@ -150,13 +135,13 @@ Fixed Fixed::operator++( int ) // Postfix, i.e. fixed++
 	return ( tmp );
 }
 
-Fixed &	Fixed::operator--( void ) // Prefix, i.e. --fixed
+Fixed &	Fixed::operator--( void )
 {
 	this->_raw -= 1;
 	return ( *this );
 }
 
-Fixed Fixed::operator--( int ) // Postfix, i.e. fixed--
+Fixed Fixed::operator--( int )
 {
 	Fixed	tmp( *this );
 
@@ -164,9 +149,6 @@ Fixed Fixed::operator--( int ) // Postfix, i.e. fixed--
 	return ( tmp );
 }
 
-/******************************************************************************/
-/*								GETTERS										  */
-/******************************************************************************/
 int	Fixed::getRawBits( void ) const
 {
 	if ( PRINT_MESSAGE == 1 )
@@ -174,9 +156,6 @@ int	Fixed::getRawBits( void ) const
 	return ( this->_raw );
 }
 
-/******************************************************************************/
-/*								SETTERS										  */
-/******************************************************************************/
 void	Fixed::setRawBits( int const raw )
 {
 	if ( PRINT_MESSAGE == 1 )
@@ -185,9 +164,6 @@ void	Fixed::setRawBits( int const raw )
 	return ;
 }
 
-/******************************************************************************/
-/*							PUBLIC FUNCTIONS								  */
-/******************************************************************************/
 int		Fixed::toInt( void ) const
 {
 	return ( this->_raw >> Fixed::_fractionalBits );
@@ -195,7 +171,7 @@ int		Fixed::toInt( void ) const
 
 float	Fixed::toFloat( void ) const
 {
-	return ( (float)this->_raw / (1 << _fractionalBits) );
+	return ( (float)this->_raw / (256) );
 }
 
 Fixed &	Fixed::min( Fixed & lhs, Fixed & rhs )

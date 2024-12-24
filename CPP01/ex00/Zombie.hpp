@@ -6,7 +6,7 @@
 /*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 20:37:53 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/11/20 20:37:54 by mualkhid         ###   ########.fr       */
+/*   Updated: 2024/12/07 19:57:59 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,18 @@
 #include <string>
 #define st std::string
 
+
 class Zombie {
 	private :
 		st	name;
 	public :
 		Zombie();
 		Zombie( st nm );
-			void announce( void );
 		~Zombie();
+		void announce( void );
 };
 
-Zombie*	newZombie( std::string name );
-void	randomChump( std::string name );
+Zombie*	newZombie( st name );
+void	randomChump( st name );
 
 #endif

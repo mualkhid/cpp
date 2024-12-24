@@ -6,7 +6,7 @@
 /*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 20:41:58 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/11/20 20:41:59 by mualkhid         ###   ########.fr       */
+/*   Updated: 2024/12/18 19:01:15 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,6 @@
 #include "Point.hpp"
 #include "Fixed.hpp"
 
-#define RESET "\e[0m"
-#define CYAN "\e[36m"
-#define YELLOW "\e[33m"
-#define GREEN "\e[32m"
-
-# define PRINT_MESSAGE 0
-
-/******************************************************************************/
-/*						CONSTRUCTORS & DESTRUCTORS							  */
-/******************************************************************************/
 Point::Point( void ) : _x( 0 ), _y( 0 )
 {
 	if ( PRINT_MESSAGE == 1 )
@@ -52,22 +42,17 @@ Point::~Point( void )
 	return ;
 }
 
-/******************************************************************************/
-/*								OPERATORS								  	  */
-/******************************************************************************/
 Point &	Point::operator=( Point const & rhs )
 {
 	if ( PRINT_MESSAGE == 1 )
-		std::cerr << YELLOW "Point assignment operator called." RESET << std::endl;
+		std::cerr << PURPLE "Point assignment operator called." RESET << std::endl;
 	std::cerr << "Warning: cannot assign to Point const attributes. "
 		"Use a Point copy constructor instead." << std::endl;
 	(void)rhs;
 	return ( *this );
 }
 
-/******************************************************************************/
-/*								GETTERS										  */
-/******************************************************************************/
+
 Fixed const &	Point::getX( void ) const
 {
 	return ( this->_x );

@@ -6,17 +6,20 @@
 /*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 13:23:21 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/11/20 13:23:23 by mualkhid         ###   ########.fr       */
+/*   Updated: 2024/12/07 16:30:01 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
+#include <cstdlib>
+#include <cctype>
+#include <string>
 #include <iostream>
 #include <iomanip>
 #include "contacts.hpp"
-#include <string>
+
 #define st std::string
 
 #define RED    "\x1b[1;31m"

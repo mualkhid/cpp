@@ -6,14 +6,14 @@
 /*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 20:10:52 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/11/25 20:10:53 by mualkhid         ###   ########.fr       */
+/*   Updated: 2024/12/22 19:46:03 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap( void ) : ClapTrap("MedAitSwa") {
+FragTrap::FragTrap( void ) : ClapTrap("Munia") {
 	std::cout << YELLOW "FragTrap Default constructor Called" RESET << std::endl;
 	this->Hit_Point = 100;
 	this->Energy_Point = 100;
@@ -33,11 +33,11 @@ FragTrap::FragTrap( st_ name ) {
 }
 
 FragTrap::~FragTrap() {
-	std::cout << YELLOW "Destructor Called" RESET << std::endl;
+	std::cout << YELLOW "FragTrap Destructor Called" RESET << std::endl;
 }
 
 FragTrap &FragTrap::operator=(const FragTrap &b) {
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "FragTrap Copy assignment operator called" << std::endl;
 	if (this != &b)
 		this->name = b.name;
 	return (*this);

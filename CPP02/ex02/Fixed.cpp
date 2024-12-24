@@ -6,7 +6,7 @@
 /*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 20:41:18 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/11/20 20:41:19 by mualkhid         ###   ########.fr       */
+/*   Updated: 2024/12/24 12:21:29 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 const int Fixed::eight_bits = 8;
 
 Fixed::Fixed( const int converter ) {
-	stock = converter << eight_bits;
+	fixed_point = converter << eight_bits;
 }
 
 Fixed::Fixed( void ) {
-	stock = 0;
+	fixed_point = 0;
 }
 
 Fixed::Fixed( Fixed const &ret_obj ) {
@@ -32,17 +32,17 @@ Fixed::~Fixed(void) {
 }
 
 Fixed::Fixed( const float converter ) {
-	stock = (int)roundf(converter * (1 << this->eight_bits));
+	fixed_point = (int)roundf(converter * (256));
 }
 
 Fixed Fixed::operator=(const Fixed &b) {
 	if (this != &b)
-		this->stock = b.stock;
+		this->fixed_point = b.fixed_point;
 	return (*this);
 }
 
 int Fixed::toInt( void ) const {
-	return (stock >> eight_bits);
+	return (fixed_point >> eight_bits);
 }
 
 std::ostream &operator<<(std::ostream& os, const Fixed& dt) {
@@ -51,7 +51,7 @@ std::ostream &operator<<(std::ostream& os, const Fixed& dt) {
 }
 
 float Fixed::toFloat( void ) const {
-	return (stock / (pow(2, 8)));
+	return (fixed_point / (pow(2, 8)));
 }
 
 Fixed	&Fixed::min(Fixed &first, Fixed &sec) {
@@ -68,11 +68,11 @@ Fixed	&Fixed::max(Fixed &first, Fixed &sec) {
 
 
 bool Fixed::operator<(const Fixed &compare) {
-	return (this->stock < compare.stock);
+	return (this->fixed_point < compare.fixed_point);
 }
 
 bool Fixed::operator>(const Fixed &compare) {
-	return (this->stock > compare.stock);
+	return (this->fixed_point > compare.fixed_point);
 }
 
 Fixed Fixed::operator*(const Fixed &b) {
@@ -88,57 +88,57 @@ Fixed Fixed::operator/(const Fixed &b) {
 }
 
 Fixed Fixed::operator-(const Fixed &b) {
-	return (Fixed(this->toInt() - b.toInt()));
+	return (Fixed(this->toFloat() - b.toFloat()));
 }
 
 Fixed Fixed::operator++( int ) {
 	Fixed	copy;
-	copy.stock = this->stock;
-	this->stock++;
+	copy.fixed_point = this->fixed_point;
+	this->fixed_point++;
 	return (copy);
 }
 
 Fixed &Fixed::operator++( void ) {
-	this->stock++;
+	this->fixed_point++;
 	return (*this);
 }
 
 Fixed Fixed::operator--( int ) {
 	Fixed	copy;
-	copy.stock = this->stock;
-	this->stock--;
+	copy.fixed_point = this->fixed_point;
+	this->fixed_point--;
 	return (copy);
 }
 
 Fixed &Fixed::operator--( void ) {
-	this->stock--;
+	this->fixed_point--;
 	return (*this);
 }
 
 bool Fixed::operator>=(const Fixed &rightnode) {
-	return (this->stock >= rightnode.stock);
+	return (this->fixed_point >= rightnode.fixed_point);
 }
 
 bool Fixed::operator!=(const Fixed &rightnode) {
-	return (this->stock != rightnode.stock);
+	return (this->fixed_point != rightnode.fixed_point);
 }
 
 bool Fixed::operator<=(const Fixed &rightnode) {
-	return (this->stock <= rightnode.stock);
+	return (this->fixed_point <= rightnode.fixed_point);
 }
 
 bool Fixed::operator==(const Fixed &rightnode) {
-	return (this->stock == rightnode.stock);
+	return (this->fixed_point == rightnode.fixed_point);
 }
 
 const Fixed	&Fixed::min(const Fixed &first, const Fixed &sec) {
-	if (first.stock < sec.stock)
+	if (first.fixed_point < sec.fixed_point)
 		return (first);
 	return (sec);
 }
 
 const Fixed	&Fixed::max(const Fixed &first, const Fixed &sec) {
-	if (first.stock < sec.stock)
+	if (first.fixed_point < sec.fixed_point)
 		return (sec);
 	return (first);
 }

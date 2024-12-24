@@ -6,7 +6,7 @@
 /*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 20:41:03 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/11/20 20:41:04 by mualkhid         ###   ########.fr       */
+/*   Updated: 2024/12/23 17:08:58 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ const int Fixed::eight_bits = 8;
 Fixed::Fixed( const int converter )
 {
 	std::cout << "Int constructor called" << std::endl;
-	stock = converter << eight_bits;
+	fixed_point = converter << eight_bits;
 }
 
 Fixed::Fixed( void )
 {
 	std::cout << "Default constructor called" << std::endl;
-	stock = 0;
+	fixed_point = 0;
 }
 
 Fixed::Fixed( Fixed const &ret_obj )
@@ -41,19 +41,19 @@ Fixed::~Fixed(void)
 Fixed::Fixed( const float converter )
 {
 	std::cout << "Float constructor called" << std::endl;
-	stock = (int)roundf(converter * (pow(2, 8)));
+	fixed_point = (int)roundf(converter * (pow(2, 8)));
 }
 
 Fixed &Fixed::operator=(const Fixed &b)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &b)
-		this->stock = b.stock;
+		this->fixed_point = b.fixed_point;
 	return (*this);
 }
 
 int Fixed::toInt( void ) const {
-	return (stock >> eight_bits);
+	return (fixed_point >> eight_bits);
 }
 
 std::ostream &operator<<(std::ostream& os, const Fixed& dt) {
@@ -62,5 +62,6 @@ std::ostream &operator<<(std::ostream& os, const Fixed& dt) {
 }
 
 float Fixed::toFloat( void ) const {
-	return (stock / (pow(2, 8)));
+	return (fixed_point / (pow(2, 8)));
 }
+ 

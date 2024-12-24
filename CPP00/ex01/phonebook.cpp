@@ -6,7 +6,7 @@
 /*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 13:23:15 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/11/20 13:23:17 by mualkhid         ###   ########.fr       */
+/*   Updated: 2024/12/07 18:33:42 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ void		phonebook::contact_setp(st pn, int i) {
 void		phonebook::contact_setd(st ds, int i) {
 	contact[i].setterDsecret(ds);
 }
+
+
 
 int	checkall(st fname, st sname, st nname, st pnumber, st dsecret) {
 	for (int index = 0; pnumber[index];) {
@@ -107,7 +109,7 @@ int		add_contact(phonebook *div, int i)
 		i++;
 	}
 	else
-		std::cout << RED "Contact Removed" RESET << std::endl;
+		std::cout << RED "Can not add contact" RESET << std::endl;
 	return (i);
 }
 
@@ -149,19 +151,19 @@ void	search_contact(phonebook *div)
 		std::cout << RED "Error contact not found" RESET << std::endl;
 		return ;
 	}
-	if (al.empty() || stoi(al) > 7) {
+	if (al.empty() || atoi(al.c_str()) > 7) {
 		std::cout << RED "Error contact not found" RESET << std::endl;
 		return ;
 	}
-	if (!(div->phonebook::getter_contact(stoi(al)).getterFname().empty() && div->phonebook::getter_contact(stoi(al)).getterSname().empty()
-		&& div->phonebook::getter_contact(stoi(al)).getterNname().empty() && div->phonebook::getter_contact(stoi(al)).getterPnumber().empty() &&
-		div->phonebook::getter_contact(stoi(al)).getterDsecret().empty()))
+	if (!(div->phonebook::getter_contact(atoi(al.c_str())).getterFname().empty() && div->phonebook::getter_contact(atoi(al.c_str())).getterSname().empty()
+		&& div->phonebook::getter_contact(atoi(al.c_str())).getterNname().empty() && div->phonebook::getter_contact(atoi(al.c_str())).getterPnumber().empty() &&
+		div->phonebook::getter_contact(atoi(al.c_str())).getterDsecret().empty()))
 	{
-		std::cout << "First Name : " << div->phonebook::getter_contact(stoi(al)).getterFname() << std::endl;
-		std::cout << "Last Name : " << div->phonebook::getter_contact(stoi(al)).getterSname() << std::endl;
-		std::cout << "Nick Name : " << div->phonebook::getter_contact(stoi(al)).getterNname() << std::endl;
-		std::cout << "Phone number : " << div->phonebook::getter_contact(stoi(al)).getterPnumber() << std::endl;
-		std::cout << "Dark Secret : " << div->phonebook::getter_contact(stoi(al)).getterDsecret() << std::endl;
+		std::cout << "First Name : " << div->phonebook::getter_contact(atoi(al.c_str())).getterFname() << std::endl;
+		std::cout << "Last Name : " << div->phonebook::getter_contact(atoi(al.c_str())).getterSname() << std::endl;
+		std::cout << "Nick Name : " << div->phonebook::getter_contact(atoi(al.c_str())).getterNname() << std::endl;
+		std::cout << "Phone number : " << div->phonebook::getter_contact(atoi(al.c_str())).getterPnumber() << std::endl;
+		std::cout << "Dark Secret : " << div->phonebook::getter_contact(atoi(al.c_str())).getterDsecret() << std::endl;
 	}
 	else
 		std::cout << RED "Error contact not found" RESET << std::endl;

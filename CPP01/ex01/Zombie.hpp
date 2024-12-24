@@ -6,7 +6,7 @@
 /*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 20:38:08 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/11/20 20:38:09 by mualkhid         ###   ########.fr       */
+/*   Updated: 2024/12/07 20:01:12 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ class Zombie
 		~Zombie();
 };
 
-Zombie* zombieHorde( int N, std::string name );
+Zombie* zombieHorde( int N, st name );
 
 #endif

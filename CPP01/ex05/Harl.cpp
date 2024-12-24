@@ -6,7 +6,7 @@
 /*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 20:39:41 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/11/20 20:39:42 by mualkhid         ###   ########.fr       */
+/*   Updated: 2024/12/08 18:32:51 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,18 @@ void Harl::error( void ) {
 	std::cout << "This is unacceptable! I want to speak to the manager now."  << std::endl;
 }
 
-void Harl::complain( std::string level ) {
-	void	(Harl::*ptr[5])(void);
+void Harl::complain(std::string level) {
+    void (Harl::*ptr[4])(void) = { &Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	st_ arr[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
-	ptr[1] = &Harl::debug;
-	ptr[2] = &Harl::info;
-	ptr[3] = &Harl::warning;
-	ptr[4] = &Harl::error;
+	for (size_t i = 0; i < 4; i++)
+	{
+		if (level == arr[i])
+		{
+			(this->*ptr[i])();
+			return ;
+		}
+	}
+	std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 
-	(this->*ptr[stoi(level)])();
 }

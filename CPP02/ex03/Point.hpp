@@ -6,7 +6,7 @@
 /*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 20:42:03 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/11/20 20:42:04 by mualkhid         ###   ########.fr       */
+/*   Updated: 2024/12/23 12:42:50 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 
 class	Point
 {
+	private:
+		Fixed const	_x;
+		Fixed const	_y;
 	public:
 		Point( void );
 		Point( Fixed const x, Fixed const y );
@@ -29,9 +32,7 @@ class	Point
 		Fixed const &	getX( void ) const;
 		Fixed const &	getY( void ) const;
 
-	private:
-		Fixed const	_x;
-		Fixed const	_y;
+
 };
 
 #endif

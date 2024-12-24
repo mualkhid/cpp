@@ -6,7 +6,7 @@
 /*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 20:11:31 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/11/25 20:11:33 by mualkhid         ###   ########.fr       */
+/*   Updated: 2024/12/23 16:34:49 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,5 @@ st_		Animal::getType( void ) const {
 }
 
 void	Animal::makeSound() const {
-	std::cout << BLUE "Aaaaaaaghhhhhhh" RESET << std::endl;
+	std::cout << BLUE "Aaaaaaaghhhhhhh another animal" RESET << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 20:21:27 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/11/25 20:21:28 by mualkhid         ###   ########.fr       */
+/*   Updated: 2024/12/23 16:35:31 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ WrongCat::WrongCat( const WrongCat &copy ) {
 }
 
 void	WrongCat::makeSound() const  {
-	std::cout << "WrongCat " << this->type << BLUE " : WAAAAAAAAAAAAAA" RESET << std::endl;
+	std::cout << "WrongCat " << this->type << BLUE " : Wrong cat hoof hoof" RESET << std::endl;
 }
 
 st_		WrongCat::getType( void ) const {

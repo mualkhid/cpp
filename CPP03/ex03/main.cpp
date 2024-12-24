@@ -6,40 +6,40 @@
 /*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 20:11:05 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/11/25 20:11:07 by mualkhid         ###   ########.fr       */
+/*   Updated: 2024/12/22 20:07:11 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
 int main() {
-	ClapTrap john("John");
-	ClapTrap jim("Jim");
-	ClapTrap joe;
-	ScavTrap jane;
-	FragTrap joseph;
-	DiamondTrap	daniel;
+	ClapTrap reem("reem");
+	ClapTrap mai("mai");
+	ClapTrap yumna;
+	ScavTrap maha;
+	FragTrap mena;
+	DiamondTrap	rasha;
 
-	john.attack("Marge");
-	john.attack("Bart");
-	john.attack("Homer");
-	john.takeDamage(5);
-	jim.takeDamage(9);
-	jim.takeDamage(10);
-	joe.beRepaired(10);
-	joe.takeDamage(19);
-	jane.attack("Lisa");
-	jane.takeDamage(99);
-	jane.beRepaired(50);
-	jane.GuardGate();
-	joseph.attack("Maggie");
-	joseph.takeDamage(99);
-	joseph.beRepaired(50);
-	joseph.highFivesGuys();
-	daniel.attack("Ned");
-	daniel.takeDamage(5);
-	daniel.beRepaired(3);
-	daniel.GuardGate();
-	daniel.highFivesGuys();
-	daniel.whoAmI();
+	reem.attack("a");
+	reem.attack("b");
+	reem.attack("c");
+	reem.takeDamage(5);
+	mai.takeDamage(9);
+	mai.takeDamage(10);
+	yumna.beRepaired(10);
+	yumna.takeDamage(19);
+	maha.attack("d");
+	maha.takeDamage(99);
+	maha.beRepaired(50);
+	maha.GuardGate();
+	mena.attack("e");
+	mena.takeDamage(99);
+	mena.beRepaired(50);
+	mena.highFivesGuys();
+	rasha.attack("f");
+	rasha.takeDamage(5);
+	rasha.beRepaired(3);
+	rasha.GuardGate();
+	rasha.highFivesGuys();
+	rasha.whoAmI();
 }

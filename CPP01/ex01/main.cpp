@@ -6,7 +6,7 @@
 /*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 20:37:59 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/11/20 20:38:00 by mualkhid         ###   ########.fr       */
+/*   Updated: 2024/12/08 17:40:33 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,17 @@
 
 int main() {
 	Zombie	*Zombies;
+	Zombie	*Zombies_Ahmed;
+	Zombies = zombieHorde(5, "Reem");
+	Zombies_Ahmed = zombieHorde(N, "Munia");
 
-	Zombies = zombieHorde(5, "Abdelmoula");
-	for (int index = 0; index < N; index++)
+	for (int index = 0; index < 5; index++)
 		Zombies->annonce();
+
+	for (int index = 0; index < N; index++)
+		Zombies_Ahmed->annonce();
+
 	delete[] Zombies;
+	delete[] Zombies_Ahmed;
 }
 

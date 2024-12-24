@@ -6,21 +6,21 @@
 /*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 20:42:28 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/11/20 20:42:29 by mualkhid         ###   ########.fr       */
+/*   Updated: 2024/12/22 15:27:40 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : name("MedAitSwa") {
+ClapTrap::ClapTrap() : name("Munia") {
 	Hit_Point = 10;
 	Energy_Point = 10;
 	Attack_Damage = 0;
 }
 
 ClapTrap::ClapTrap( st_ name ) {
-	std::cout << YELLOW "Constructor Called" RESET << std::endl;
+	std::cout << YELLOW "ClapTrap Constructor Called" RESET << std::endl;
 	this->name = name;
 	Hit_Point = 10;
 	Energy_Point = 10;
@@ -63,12 +63,12 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &b) {
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "ClapTrap Copy assignment operator called" << std::endl;
 	if (this != &b)
 		this->name = b.name;
 	return (*this);
 }
 
 ClapTrap::~ClapTrap() {
-	std::cout << YELLOW "Destructor Called" RESET << std::endl;
+	std::cout << YELLOW "ClapTrap Destructor Called" RESET << std::endl;
 }

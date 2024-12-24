@@ -6,7 +6,7 @@
 /*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 20:37:48 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/11/20 20:37:49 by mualkhid         ###   ########.fr       */
+/*   Updated: 2024/12/08 17:13:18 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,10 @@ Zombie::Zombie( st name ) {
 }
 
 Zombie::Zombie() {
-
 }
 
 Zombie::~Zombie() {
-	std::cout << this->name << " Got Destroyed" << std::endl;
+	std::cout << this->name << " Got Destroyed." << std::endl;
 }
 
 void Zombie::announce( void ) {

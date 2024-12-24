@@ -6,7 +6,7 @@
 /*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 20:11:53 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/11/25 20:11:56 by mualkhid         ###   ########.fr       */
+/*   Updated: 2024/12/23 16:34:24 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Dog::Dog( const Dog &obj ) {
 }
 
 void	Dog::makeSound() const {
-	std::cout << "Dog " << this->type << BLUE " : Simp Simp 🐶🐶" RESET << std::endl;
+	std::cout << "Dog " << this->type << BLUE " : Woof Woof 🐶🐶" RESET << std::endl;
 }
 
 Dog::~Dog() {

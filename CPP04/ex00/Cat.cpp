@@ -6,7 +6,7 @@
 /*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 20:11:43 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/11/25 20:11:45 by mualkhid         ###   ########.fr       */
+/*   Updated: 2024/12/23 16:34:36 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Cat::Cat( const Cat &obj ) {
 }
 
 void	Cat::makeSound() const  {
-	std::cout << "Cat " << this->type << BLUE " : Mgheeeeeeew 🐱🐱" RESET << std::endl;
+	std::cout << "Cat " << this->type << BLUE " : Meeeeeeeooow 🐱🐱" RESET << std::endl;
 }
 
 Cat::~Cat() {

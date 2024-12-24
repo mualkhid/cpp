@@ -6,7 +6,7 @@
 /*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 20:10:06 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/11/25 20:10:08 by mualkhid         ###   ########.fr       */
+/*   Updated: 2024/12/22 19:41:01 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ FragTrap::FragTrap( FragTrap *copy ) {
 }
 
 FragTrap::FragTrap( st_ name ) {
-	std::cout << YELLOW "Constructor Called" RESET << std::endl;
+	std::cout << YELLOW "FragTrap Constructor Called" RESET << std::endl;
 	this->name = name;
 	this->Hit_Point = 100;
 	this->Energy_Point = 100;
@@ -33,11 +33,11 @@ FragTrap::FragTrap( st_ name ) {
 }
 
 FragTrap::~FragTrap() {
-	std::cout << YELLOW "Destructor Called" RESET << std::endl;
+	std::cout << YELLOW "FragTrap Destructor Called" RESET << std::endl;
 }
 
 FragTrap &FragTrap::operator=(const FragTrap &b) {
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "FragTrap Copy assignment operator called" << std::endl;
 	if (this != &b)
 		this->name = b.name;
 	return (*this);

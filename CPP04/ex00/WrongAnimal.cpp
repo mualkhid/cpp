@@ -6,7 +6,7 @@
 /*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 20:21:15 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/11/25 20:21:17 by mualkhid         ###   ########.fr       */
+/*   Updated: 2024/12/23 16:35:10 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ WrongAnimal::WrongAnimal( const WrongAnimal &copy ) {
 }
 
 void	WrongAnimal::makeSound() const {
-	std::cout << BLUE "Aaaaaaaghhhhhhh" RESET << std::endl;
+	std::cout << BLUE "Aaaaaaaghhhhhhh Wrong animal" RESET << std::endl;
 }
 
 st_		WrongAnimal::getType( void ) const {

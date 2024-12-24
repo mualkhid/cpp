@@ -6,14 +6,14 @@
 /*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 20:41:38 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/11/20 20:41:39 by mualkhid         ###   ########.fr       */
+/*   Updated: 2024/12/18 18:56:30 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "Point.hpp"
 #include "Fixed.hpp"
-#include <cmath>
+
 
 Fixed	getTriangleArea( Point const a, Point const b, Point const c )
 {
@@ -26,10 +26,6 @@ Fixed	getTriangleArea( Point const a, Point const b, Point const c )
 
 bool bsp( Point const a, Point const b, Point const c, Point const p )
 {
-	// TODO for repush: use vectors instead of triangle areas
-	// to determine if the point is in the triangle or not. The
-	// area calculation is breakable in certain cases where the point
-	// is not inside the triangle but should be..
 	Fixed	areaTriangle = getTriangleArea(a, b, c);
 	Fixed	areaPAB = getTriangleArea(p, a, b);
 	Fixed	areaPBC = getTriangleArea(p, b, c);

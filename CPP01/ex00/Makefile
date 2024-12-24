@@ -1,10 +1,10 @@
 NAME = Zombies
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-CPP = c++
+CXX = c++
 
-SRC = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
+SRC = Main.cpp NewZombie.cpp RandomChump.cpp Zombie.cpp
 
 HEADER = Zombie.hpp
 
@@ -13,10 +13,10 @@ OBJ=$(SRC:.cpp=.o)
 all : $(NAME)
 
 $(NAME) : $(OBJ) $(HEADER)
-	$(CPP) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 %.o : %.cpp
-	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) $(CXXFLAGS) -c $< -o $@
 
 clean :
 	rm -rf $(OBJ)

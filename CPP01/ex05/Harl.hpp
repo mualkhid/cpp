@@ -6,7 +6,7 @@
 /*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 20:39:46 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/11/20 20:39:47 by mualkhid         ###   ########.fr       */
+/*   Updated: 2024/12/08 18:33:35 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 #include <iostream>
 #include <string>
+#include <cstdlib>
 #define	st_	std::string
 
 class Harl {
