@@ -1,8 +1,8 @@
 NAME = Animal_V2
 
-CPP = c++
+CXX = c++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = Dog.cpp main.cpp Cat.cpp Animal.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 
@@ -13,10 +13,10 @@ HEADER = Dog.hpp Cat.hpp Animal.hpp WrongAnimal.hpp WrongCat.hpp Brain.hpp
 all : $(NAME)
 
 $(NAME) : $(OBJ) $(HEADER)
-	$(CPP) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 %.o : %.cpp $(HEADER)
-	$(CPP) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) $(CXXFLAGS) -c $< -o $@
 
 clean :
 	rm -rf $(OBJ)
