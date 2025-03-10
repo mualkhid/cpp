@@ -1,34 +1,31 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mnassi <mnassi@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/10 14:08:57 by mnassi            #+#    #+#             */
-/*   Updated: 2023/09/17 17:41:47 by mnassi           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
-int main() {
-	Bureaucrat	person("mohammed", 15);
-	Form	person1("joel", 14, 1);
-	/*-----------Too High exception-----------*/
-	try {
-		person.set_grade(0);
+int main()
+{
+	try{
+		Bureaucrat* ab = new Bureaucrat("ab", 10);
+		Bureaucrat* ac = new Bureaucrat("ac", 9);
+		Form* cd = new Form("cd", 10, 30);
+
+		// std::cout << *cd;
+		try {
+			ab->signForm(*cd);
+		} catch (std::exception& e) {
+			std::cout << e.what()<< std::endl;
+		}
+		// std::cout << *cd;
+		try {
+			cd->beSigned(*ac);
+		} catch (std::exception& e) {
+			std::cout << e.what();
+		}
+		delete ab;
+		delete cd;
+		delete ac;
 	}
-	catch (std::exception &e) {
-		std::cout << BOLD_RED << e.what() << RESET_COLOR << std::endl;
+	catch (std::exception& e) {
+			std::cout << e.what();
 	}
-	/*-----------Too Low exception-----------*/
-	try {
-		person.set_grade(151);
-	}
-	catch (std::exception &e) {
-		std::cout << BOLD_RED << e.what() << RESET_COLOR << std::endl;
-	}
-	/*-----------couldn't sign-----------*/
-	person.signForm(person1);
+	return 0;
 }

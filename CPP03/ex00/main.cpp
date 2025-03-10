@@ -26,5 +26,5 @@ int main() {
 	mai.takeDamage(10);
 	maha.beRepaired(10);
 	maha.takeDamage(19);
-	maha.attack("mohammed");
+	maha.attack("munia");
 }
