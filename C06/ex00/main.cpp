@@ -1,21 +1,12 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mnassi <mnassi@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/19 18:46:58 by mnassi            #+#    #+#             */
-/*   Updated: 2023/10/12 19:00:48 by mnassi           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "ScalarConverter.hpp"
 
-int main(int ac, char **av) {
-	if (ac > 2 || !av[1]) {
-		std::cout << "One Arguments" << std::endl;
-		return (0);
-	}
-	ScalarConverter::convert(av[1]);
+int main(int ac, char **av) 
+{
+    if (ac != 2) 
+    {
+        std::cout << "Error: wrong number of arguments" << std::endl;
+        return 1;
+    }
+    ScalarConverter::convert(av[1]);
+    return 0;
 }

@@ -1,23 +1,16 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mnassi <mnassi@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/23 16:27:17 by mnassi            #+#    #+#             */
-/*   Updated: 2023/09/24 16:10:34 by mnassi           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
+#include <stdint.h>
 #include "Serialize.hpp"
 
 int main() {
-	Data	*exp = new Data;
-	exp->testing = "Heafadsfadsfasdllo";
-	std::cout  << "before : " << exp->testing << std::endl;
-	uintptr_t sto = Serializer::serialize(exp);
-	exp = Serializer::deserialize(sto);
-	std::cout  << "after : " << exp->testing << std::endl;
-	delete exp;
+	Serializer *a;
+	Data *d = new Data;
+	uintptr_t ptr;
+	Data *after;
+	std::cout << "Data before:       " << d << std::endl;
+	ptr = a->serialize(d);
+	std::cout << "Data serialized:   " << ptr << std::endl;
+	after = a->deserialize(ptr);
+	std::cout << "Data deserialized: " << after << std::endl;
+
+	delete d;
 }
