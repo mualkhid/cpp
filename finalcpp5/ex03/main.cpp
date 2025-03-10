@@ -19,6 +19,8 @@ int main() {
 		ppf->execute(a);
 		scf->execute(a);
 		delete rrf;
+		delete ppf;
+		delete scf;
 	}
 	catch (int) {
 		return (0);
