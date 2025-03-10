@@ -1,40 +1,46 @@
+
 #include "Intern.hpp"
 
-Intern::Intern() {
-	std::cout << "Intern created" << std::endl;
+Intern::Intern( void ) {
+	std::cout << "Intern Default Constructor Called" << std::endl;
 }
 
-Intern::Intern(const Intern& other) {
-	std::cout << "Copy of Intern created" << std::endl;
-	*this = other;
+Intern &Intern::operator=(const Intern &b) {
+	std::cout << "Intern Copy assignment operator called" << std::endl;
+	if (this != &b)
+		this->target = b.target;
+	return (*this);
 }
 
-Intern::~Intern() {
-	std::cout << "Intern destroyed" << std::endl;
-}
-
-Intern& Intern::operator=(const Intern& other) {
-	std::cout << "Intern assignment operator" << std::endl;
-	if (this == &other) return *this;
-	return *this;
-}
-
-AForm* Intern::makeForm(std::string name, std::string target) {
-	static const int NForms = 3;
-	t_forms forms[NForms] = {
-		{ "shrubbery creation", new ShrubberyCreationForm(target) },
-		{ "robotomy request", new RobotomyRequestForm(target) },
-		{ "presidential pardon", new PresidentialPardonForm(target) }
-	};
-
-	AForm* ret = NULL;
-	for (int i = 0; i < NForms; i++) {
-		if (forms[i].name == name) ret = forms[i].forms;
-		else delete forms[i].forms;
+AForm	*Intern::makeForm( st_ type, st_ target ) {
+	int		i = 0;
+	st_	forms[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
+	while (i < 3 && forms[i] != type)
+		i++;
+	switch (i) {
+		case 0 :
+			return (new Shrubbery(target));
+		case 1 :
+			return (new Robotomy(target));
+		case 2 :
+			return (new Presidential(target));
+			break ;
+		default :
+			std::cout << RED << "form name not found" << RESET_COLOR << std::endl;
+			throw (-1);
 	}
+	return (NULL);
+}
 
-	if (ret != NULL) std::cout << "Intern creates form " << name << std::endl;
-	else std::cout << "Intern was not able to find the form " << name << std::endl;
+Intern::Intern( st_ target_ ) : target(target_) {
+	std::cout << "Intern Parametrized Constructor Called" << std::endl;
+}
 
-	return ret; 
+Intern::Intern( const Intern &cpy ) {
+	std::cout << "Intern copy Constructor Called" << std::endl;
+	*this = cpy;
+}
+
+Intern::~Intern( void ) {
+	std::cout << "Intern Destructor Called" << std::endl;
 }

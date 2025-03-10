@@ -3,16 +3,16 @@
 int main()
 {
 	try {
-    	Bureaucrat *ab = new Bureaucrat("ab", 2);
-		std::cout << *ab << std::endl;
-		ab->increment();
-		std::cout << *ab << std::endl;
-		ab->increment();
-		std::cout << *ab << std::endl;
-		ab->increment();
-		std::cout << *ab << std::endl;
-		delete ab;
+    	Bureaucrat *munia = new Bureaucrat("munia", 7);
+		std::cout << *munia;
+		munia->increment();
+		std::cout << *munia;
+		munia->increment();
+		std::cout << *munia;
+		munia->increment();
+		std::cout << *munia;
+		delete munia;
 	} catch (std::exception& a) {
-		std::cout << a.what() << std::endl;
+		std::cout << a.what();
 	}
 }

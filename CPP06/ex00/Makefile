@@ -1,26 +1,29 @@
-NAME	=		scalarConversion
+NAME = Bureaucrat
 
-CC		= 		c++
-CFLAGS	= 		-Wall -Wextra -Werror -std=c++98 
+CPP = c++
 
-SRC		=		main.cpp	ScalarConverter.cpp
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-OBJ		= 		$(SRC:%.cpp=%.o)
+SRC = Bureaucrat.cpp main.cpp
 
+OBJ = $(SRC:.cpp=.o)
 
-all:			$(NAME)
+HEADER = Bureaucrat.hpp
 
-$(NAME):		$(OBJ)
-				$(CC) $(CFLAGS) $^ -o $@
-%.o: %.cpp
-				$(CC) $(CFLAGS) -c $< -o $@
+all : $(NAME)
 
-clean:
-				rm -rf $(OBJ) $(DEP)
+$(NAME) : $(OBJ) $(HEADER)
+	$(CPP) $(CFLAGS) $(OBJ) -o $(NAME)
 
-fclean: 		clean
-				rm -rf $(NAME)
+%.o : %.cpp $(HEADER)
+	$(CPP) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
 
-re: fclean all
+clean :
+	rm -rf $(OBJ)
 
-.PHONY: all re clean fclean
+fclean : clean
+	rm -rf $(NAME)
+
+re : fclean all
+
+.PHONY : clean fclean re

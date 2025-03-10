@@ -2,35 +2,30 @@
 #include "Form.hpp"
 #include <iostream>
 
-
-
 int main()
 {
 	try{
-		Bureaucrat* ab = new Bureaucrat("ab", 150);
-		Bureaucrat* ac = new Bureaucrat("ac", 20);
-		Form* cd = new Form("cd", 30, 10);
-
-		std::cout <<  std::endl << *cd << std::endl;
+		Bureaucrat* a = new Bureaucrat("a", 150);
+		Bureaucrat* b = new Bureaucrat("b", 20);
+		Form* c = new Form("c", 30, 10);
+		// std::cout << *c;
 		try {
-			ab->signForm(*cd);
+			a->signForm(*c);
 		} catch (std::exception& e) {
 			std::cout << e.what() << std::endl;
 		}
-		std::cout << std::endl << *cd << std::endl;
+		// std::cout << *c;
 		try {
-			cd->beSigned(*ac);
+			c->beSigned(*b);
 		} catch (std::exception& e) {
-			std::cout << e.what() << std::endl;
+			std::cout << e.what() ;
 		}
-
-
-		delete ab;
-		delete cd;
-		delete ac;
+		delete a;
+		delete c;
+		delete b;
 	}
 	catch (std::exception& e) {
-			std::cout << e.what() << std::endl;
+			std::cout << e.what();
 	}
 	return 0;
 }

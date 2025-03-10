@@ -10,19 +10,15 @@
 
 class Bureaucrat{
     public:
-    //canonical form
         Bureaucrat();
         Bureaucrat(const Bureaucrat &other);
         Bureaucrat(const std::string& name, int grade);
         Bureaucrat& operator=(const Bureaucrat& other);
         ~Bureaucrat();
-    //accessors
         std::string getName() const;
         int getGrade() const;
-    //member function
         void increment();
         void decrement();
-    //Nested class
         class GradeTooHighException : public std::exception {
             public:
                 const char *what() const throw();

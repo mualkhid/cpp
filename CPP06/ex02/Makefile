@@ -1,27 +1,29 @@
-NAME	=		identify
+NAME = ShrubberyCreationForm
 
-CC		= 		c++
-CFLAGS	= 		-Wall -Wextra -Werror -std=c++98
+CPP = c++
 
-SRC		=		main.cpp		Base.cpp
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-OBJ		= 		$(SRC:%.cpp=%.o)
+SRC = Bureaucrat.cpp main.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 
+OBJ = $(SRC:.cpp=.o)
 
-all:			$(NAME)
+HEADER = Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp
 
-$(NAME):		$(OBJ)
-				$(CC) $(CFLAGS) $^ -o $@
-%.o: %.cpp
-				$(CC) $(CFLAGS) -c $< -o $@
+all : $(NAME)
 
-clean:
-				rm -rf $(OBJ) $(DEP)
+$(NAME) : $(OBJ) $(HEADER)
+	$(CPP) $(CFLAGS) $(OBJ) -o $(NAME)
 
-fclean: 		clean
-				rm -rf $(NAME)
+%.o : %.cpp $(HEADER)
+	$(CPP) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
 
+clean :
+	rm -rf $(OBJ)
 
-re: fclean all
+fclean : clean
+	rm -rf $(NAME)
 
-.PHONY: all re clean fclean
+re : fclean all
+
+.PHONY : clean fclean re

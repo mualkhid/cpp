@@ -1,24 +1,29 @@
-NAME	=		Exception
-CC		= 		c++
-CFLAGS	= 		-Wall -Wextra -Werror -std=c++98
-SRC		=		main.cpp Intern.cpp	Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp  ShrubberyCreationForm.cpp RobotomyRequestForm.cpp
-				
-OBJ		= 		$(SRC:%.cpp=%.o)
+NAME = intern
 
-all:			$(NAME)
+CPP = c++
 
-$(NAME):		$(OBJ)
-				$(CC) $(CFLAGS) $^ -o $@
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-%.o: %.cpp
-				$(CC) $(CFLAGS) -c $< -o $@
+SRC = Bureaucrat.cpp main.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
 
-clean:
-				rm -rf $(OBJ)
+OBJ = $(SRC:.cpp=.o)
 
-fclean: 		clean
-				rm -rf $(NAME)
+HEADER = Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp Intern.hpp
 
-re: fclean all
+all : $(NAME)
 
-.PHONY: all re clean fclean
+$(NAME) : $(OBJ) $(HEADER)
+	$(CPP) $(CFLAGS) $(OBJ) -o $(NAME)
+
+%.o : %.cpp $(HEADER)
+	$(CPP) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
+
+clean :
+	rm -rf $(OBJ)
+
+fclean : clean
+	rm -rf $(NAME)
+
+re : fclean all
+
+.PHONY : clean fclean re

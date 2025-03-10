@@ -1,16 +1,34 @@
-#include <stdint.h>
-#include "Serializer.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mnassi <mnassi@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/10 14:08:57 by mnassi            #+#    #+#             */
+/*   Updated: 2023/09/17 17:41:47 by mnassi           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "Bureaucrat.hpp"
 
 int main() {
-	Serializer *a;
-	Data *d = new Data;
-	uintptr_t ptr;
-	Data *after;
-	std::cout << "Data before:       " << d << std::endl;
-	ptr = a->serialize(d);
-	std::cout << "Data serialized:   " << ptr << std::endl;
-	after = a->deserialize(ptr);
-	std::cout << "Data deserialized: " << after << std::endl;
-
-	delete d;
+	Bureaucrat	person("mohammed", 15);
+	Form	person1("joel", 14, 1);
+	/*-----------Too High exception-----------*/
+	try {
+		person.set_grade(0);
+	}
+	catch (std::exception &e) {
+		std::cout << BOLD_RED << e.what() << RESET_COLOR << std::endl;
+	}
+	/*-----------Too Low exception-----------*/
+	try {
+		person.set_grade(151);
+	}
+	catch (std::exception &e) {
+		std::cout << BOLD_RED << e.what() << RESET_COLOR << std::endl;
+	}
+	/*-----------couldn't sign-----------*/
+	person.signForm(person1);
 }

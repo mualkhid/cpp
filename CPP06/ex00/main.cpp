@@ -1,12 +1,23 @@
-#include "ScalarConverter.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mnassi <mnassi@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/10 14:08:57 by mnassi            #+#    #+#             */
+/*   Updated: 2023/09/17 17:36:22 by mnassi           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "Bureaucrat.hpp"
 
-int main(int argc, char **argv) {
-
-	ScalarConverter *a = new ScalarConverter;
-	if (argc != 2) {
-		std::cout << "Error!" << std::endl;
-		return 1;
+int main() {
+	try {
+		Bureaucrat	person("mohammed", 10);
+		std::cout << person << std::endl;
 	}
-	a->convert(argv[1]);
+	catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
 }
