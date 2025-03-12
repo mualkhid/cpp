@@ -1,14 +1,14 @@
-NAME = Form
+NAME =  Serialize
 
 CPP = c++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
-
-SRC = Bureaucrat.cpp main.cpp Form.cpp
+SRC = Serialize.cpp main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-HEADER = Bureaucrat.hpp Form.hpp
+CFLAGS = -Wall -Wextra -Werror -std=c++98
+
+HEADER = Serialize.hpp
 
 all : $(NAME)
 

@@ -1,14 +1,14 @@
-NAME = Bureaucrat
+NAME =  ScalarConverter
 
 CPP = c++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
-
-SRC = Bureaucrat.cpp main.cpp
+SRC = ScalarConverter.cpp main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-HEADER = Bureaucrat.hpp
+CFLAGS = -Wall -Wextra -Werror -std=c++98
+
+HEADER = ScalarConverter.hpp
 
 all : $(NAME)
 

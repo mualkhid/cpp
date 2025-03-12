@@ -1,14 +1,14 @@
-NAME = ShrubberyCreationForm
+NAME =  Base
 
 CPP = c++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
-
-SRC = Bureaucrat.cpp main.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+SRC = Base.cpp main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-HEADER = Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp
+CFLAGS = -Wall -Wextra -Werror -std=c++98
+
+HEADER = Base.hpp A.hpp B.hpp C.hpp
 
 all : $(NAME)
 
