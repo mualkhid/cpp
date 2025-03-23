@@ -1,27 +1,22 @@
-#ifndef INTERN_HPP_
-# define INTERN_HPP_
+#ifndef INTERN_HPP
+#define INTERN_HPP
 
-# include "AForm.hpp"
-# include "ShrubberyCreationForm.hpp"
-# include "RobotomyRequestForm.hpp"
-# include "PresidentialPardonForm.hpp"
-
-# include <string>
+#include <iostream>
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#define st_	std::string
 
 class Intern {
-	public:
-		Intern();
-		Intern(const Intern& other);
-		~Intern();
-
-		Intern& operator=(const Intern& other);
-
-		AForm* makeForm(std::string name, std::string target);
 	private:
-		typedef struct s_forms {
-			std::string name;
-			AForm *forms;
-		} t_forms;
+		st_		target;
+	public:
+		Intern( void );
+		Intern( st_ target );
+		AForm	*makeForm( st_ type, st_ target );
+		Intern &operator=(const Intern &b);
+		Intern( const Intern &cpy );
+		~Intern();
 };
 
 #endif

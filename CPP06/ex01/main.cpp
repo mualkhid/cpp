@@ -1,8 +1,7 @@
-#include <stdint.h>
-#include "Serializer.hpp"
+#include "Serialize.hpp"
 
 int main() {
-	Serializer *a;
+	Serializer *a = NULL;
 	Data *d = new Data;
 	uintptr_t ptr;
 	Data *after;

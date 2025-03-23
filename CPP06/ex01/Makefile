@@ -1,27 +1,29 @@
-NAME	=		serialize
+NAME =  Serialize
 
-CC		= 		c++
-CFLAGS	= 		-Wall -Wextra -Werror -std=c++98
+CPP = c++
 
-SRC		=		main.cpp Serializer.cpp
+SRC = Serialize.cpp main.cpp
 
-OBJ		= 		$(SRC:%.cpp=%.o)
+OBJ = $(SRC:.cpp=.o)
 
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-all:			$(NAME)
+HEADER = Serialize.hpp
 
-$(NAME):		$(OBJ)
-				$(CC) $(CFLAGS) $^ -o $@
-%.o: %.cpp
-				$(CC) $(CFLAGS) -c $< -o $@
+all : $(NAME)
 
-clean:
-				rm -rf $(OBJ) $(DEP)
+$(NAME) : $(OBJ) $(HEADER)
+	$(CPP) $(CFLAGS) $(OBJ) -o $(NAME)
 
-fclean: 		clean
-				rm -rf $(NAME)
+%.o : %.cpp $(HEADER)
+	$(CPP) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
 
+clean :
+	rm -rf $(OBJ)
 
-re: fclean all
+fclean : clean
+	rm -rf $(NAME)
 
-.PHONY: all re clean fclean
+re : fclean all
+
+.PHONY : clean fclean re

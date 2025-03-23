@@ -1,53 +1,42 @@
+
 #include "ShrubberyCreationForm.hpp"
 
-#include <fstream>
-
-ShrubberyCreationForm::ShrubberyCreationForm()
-		: AForm("shrubbery creation", "none", 145, 137) {}
-
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target)
-		: AForm("shrubbery creation", target, 145, 137) {
-	std::cout << "Shrubbery Creation Form created" << std::endl;
+Shrubbery::Shrubbery() : AForm("Default", 145, 137), target("Default")  {
+	std::cout << "Shrubbery Default Constructor Called" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other)
-		: AForm(other.getName(), other.getTarget(), other.getSignGrade(), other.getExecuteGrade()) {
-	*this = other;
-	std::cout << "Copy of Shrubbery Creation Form created" << std::endl;
+Shrubbery::Shrubbery( st_ target_ ) : AForm(target_, 145, 137), target(target_) {
+	std::cout << "Shrubbery Default Constructor Called" << std::endl;
 }
 
-ShrubberyCreationForm::~ShrubberyCreationForm() {
-	std::cout << "Shrubbery Creation Form destroyed" << std::endl;
+Shrubbery::Shrubbery( const Shrubbery &cpy ): AForm(cpy) {
+	std::cout << "Shrubbery copy constructor called" << std::endl;
+	*this = cpy;
 }
 
-ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& other) {
-	std::cout << "Shrubbery Creation Form assignment operator" << std::endl;
-	if (this == &other) return *this;
-	return *this;
+Shrubbery &Shrubbery::operator=(const Shrubbery &b) {
+	std::cout << "Shrubbery Copy assignment operator called" << std::endl;
+	this->target = b.target;
+	return (*this);
 }
 
-void ShrubberyCreationForm::execute(const Bureaucrat &executor) const {
-	if (!this->getSigned()) {
-		std::cout << "The form cannot be executed because its not signed" << std::endl;
+void	Shrubbery::execute( Bureaucrat const &executor ) const {
+	if (!get_sign() && executor.get_grade() > get_grade())
+		throw(GradeTooLowException());
+	std::ofstream	file((target + "_shrubbery").c_str());
+	if (!file.is_open()) {
+		std::cout << "Fd Error" << std::endl;
 		return ;
 	}
-	else if (this->getSignGrade() < executor.getGrade()) {
-		std::cout << "Form  cannot be executed because the rank is too low" << std::endl;
-		throw AForm::GradeTooLowException();
-	}
-	else {
-	std::ofstream out;
+	file << "    *" << std::endl;
+	file <<	"   /|\\" << std::endl;
+	file <<	"  //|\\\\" << std::endl;
+	file << " ///|\\\\\\" << std::endl;
+	file <<	"////|\\\\\\\\" << std::endl;
+	file <<	"    |";
+	file.close();
+}
 
-	out.open((this->getTarget() + "_shrubbery").c_str(), std::ofstream::in | std::ofstream::trunc);
-	out << "      /\\      " << std::endl;
-	out << "     /\\*\\    " << std::endl;
-	out << "    /\\O\\*\\    " << std::endl;
-	out << "   /*/\\/\\/\\   " << std::endl;
-	out << "  /\\O\\/\\*\\/\\  " << std::endl;
-	out << " /\\*\\/\\*\\/\\/\\ " << std::endl;
-	out << "/\\O\\/\\/*/\\/O/\\" << std::endl;
-	out << "      ||      " << std::endl;
-	out << "      ||      " << std::endl;
-	out << "      ||      " << std::endl;
-	}
+Shrubbery::~Shrubbery() {
+	std::cout << "Shrubbery Destructor Called" << std::endl;
 }
