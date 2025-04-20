@@ -102,10 +102,6 @@ void BitcoinExchange::processInput(const std::string& inputFilename) const
             std::cerr << "Error: bad value => " << line << std::endl;
             continue;
         }
-
-        // date = date.substr(date.find_first_not_of(" \t"), date.find_last_not_of(" \t") - date.find_first_not_of(" \t") + 1);
-        // valueStr = valueStr.substr(valueStr.find_first_not_of(" \t"), valueStr.find_last_not_of(" \t") - valueStr.find_first_not_of(" \t") + 1);
-
             date = trim(date);
             valueStr = trim(valueStr);
 
